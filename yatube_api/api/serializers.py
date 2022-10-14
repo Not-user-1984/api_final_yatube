@@ -1,11 +1,12 @@
+from posts.models import Comment, Follow, Group, Post, User
 from rest_framework import serializers
-from rest_framework.relations import SlugRelatedField
-
-from posts.models import Post, Comment, Follow, User,Group
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = SlugRelatedField(slug_field='username', read_only=True)
+    author = serializers.SlugRelatedField(
+        slug_field='username',
+        read_only=True
+    )
 
     class Meta:
         fields = '__all__'
@@ -26,8 +27,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ('id', 'author', 'post', 'text', 'created')
-        read_only_fields = ('id', 'post', 'created')
+        fields = '__all__'
 
 
 class FollowSerializer(serializers.ModelSerializer):
@@ -43,12 +43,12 @@ class FollowSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Follow
-        fields = ('following', 'user')
+        fields = '__all__'
         validators = (
             serializers.UniqueTogetherValidator(
                 queryset=model.objects.all(),
                 fields=('user', 'following'),
-                message=("Такая подписка уже существует и так")
+                message=("Такая подписка уже существует")
             ),
         )
 
