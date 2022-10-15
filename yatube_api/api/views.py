@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404
 from posts.models import Group, Post, User
 from rest_framework import filters, permissions, viewsets
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework import mixins
 
 
 from .permissions import IsOwnerOrReadOnly
@@ -43,7 +44,11 @@ class CommentViewSets(viewsets.ModelViewSet):
         serializer.save(author=self.request.user, post=post)
 
 
-class FollowViewSets(viewsets.ModelViewSet):
+class FollowViewSets(
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet
+):
     serializer_class = FollowSerializer
     filter_backends = (filters.SearchFilter,)
     search_fields = ('following__username',)
