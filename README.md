@@ -1,5 +1,13 @@
+# Api_Yatube
+![python version](https://img.shields.io/badge/Python-3.17-green)
+![django version](https://img.shields.io/badge/Django-2.3-green)
+![pillow version](https://img.shields.io/badge/Pillow-8.3-green)
+![pytest version](https://img.shields.io/badge/pytest-6.2-green)
+![PyJWT version](https://img.shields.io/badge/PyJWT-2.1-green)
+![sorl-thumbnail version](https://img.shields.io/badge/djangorestframework-3.12-green)
 
-# Описание проекта Api_Yatube
+
+## Описание проекта 
 Api для проекта Yatube https://github.com/Not-user-1984/hw05_final.
 Реализован API для всех моделей приложения. По запросу можно просмотреть все записи автора.
 Пользователи могут делать запросы к чужим страницам, комментировать записи различных авторов, подписываться на них.
@@ -77,17 +85,6 @@ GET .../api/v1/groups/2/
     "description": "Посты на тему котов"
 } 
 ```
-# Разработчики
+# Разработчик
 
-[Дима Плужников] кагорта №44 Яндекс Практикум
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-
-
-<<<<<<< HEAD
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-=======
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
->>>>>>> refs/remotes/origin/master
+[ Дима Плужников ](https://github.com/Not-user-1984)

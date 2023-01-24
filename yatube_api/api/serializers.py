@@ -48,7 +48,7 @@ class FollowSerializer(serializers.ModelSerializer):
             serializers.UniqueTogetherValidator(
                 queryset=model.objects.all(),
                 fields=('user', 'following'),
-                message=("Такая подписка уже существует")
+                message="Такая подписка уже существует"
             ),
         )
 

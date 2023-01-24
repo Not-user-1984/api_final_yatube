@@ -10,7 +10,7 @@ from .serializers import (
     GroupSerializer,
     PostSerializer,
     UserSerializer
-)
+) 
 
 
 class PostViewSets(viewsets.ModelViewSet):
